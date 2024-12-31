@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Si j'étais</title>
+</head>
+
+<body>
+    <!----- HEADER ----->
+    <header>
+        <h1><a href="./index.html">Si J'étais<span class="point">.</span></a></h1>
+        <p>Crée ton portrait chinois</p>
+        <!----- NAVIGATION ----->
+        <nav>
+            <span alt="Si j'étais une fleur" onclick="afficherAnalogies(0)">Fleur</span>
+            <span alt="Si j'étais un livre" onclick="afficherAnalogies(1)">Livre</span>
+            <span alt="Si j'étais un personnage" onclick="afficherAnalogies(2)">Personnage</span>
+            <span alt="Si j'étais un film" onclick="afficherAnalogies(3)">Film</span>
+            <span alt="Si j'étais une célébrité" onclick="afficherAnalogies(4)">Célébrité</span>
+            <span alt="Si j'étais un chiffre" onclick="afficherAnalogies(5)">Chiffre</span>
+            <span alt="Si j'étais un sentiment" onclick="afficherAnalogies(6)">Sentiment</span>
+        </nav>
+    </header>
+    <main>
+
+        <!----- FORMULAIRE ----->
+        <div>
+            <div class="onglet">
+                <span class="cross">&times;</span>
+                <div class="gradient"></div>
+            </div>
+            <form action=" https://perso-etudiant.u-pem.fr/~gambette/portrait/api.php" method="post">
+                <input type="hidden" name="login" value="assia.ali-abdallah">
+                <input type="hidden" name="format" value="json">
+                <legend>À toi de jouer !</legend>
+                <p class="txt-required">Tous les champs du formulaire sont obligatoires.</p>
+                <p>
+                    <label for="analogie">
+                        Si j'étais…<br>
+                        <input type="text" name="analogie" id="analogie" placeholder="(exemple: une planète)" required
+                            title="Veuillez remplir ce champ.">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="valeurAnalogie">
+                        Je serais…<br>
+                        <input type="text" name="valeurAnalogie" id="valeurAnalogie" placeholder="(exemple: Mars)"
+                            required title="Veuillez remplir ce champ.">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="texteExplicatif">
+                        Parce que…<br>
+                        <textarea name="texteExplicatif" id="texteExplicatif" cols="30" rows="10" placeholder=""
+                            required title="Veuillez remplir ce champ."></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="imageAnalogie">
+                        Insère ton image<br>
+                        <input type="url" name="imageAnalogie" id="imageAnalogie" pattern="https?://.*"
+                            placeholder="Url de ton image" required title="Veuillez remplir ce champ.">
+                    </label>
+                </p>
+
+                <p class="submit">
+                    <input type="button" value="Envoyer">
+                </p>
+            </form>
+        </div>
+        <!----- SECTION ----->
+        <div>
+            <div class="onglet2">
+                <span class="cross">&times;</span>
+                <div class="gradient"></div>
+            </div>
+            <section class="page-analogie"></section>
+        </div>
+    </main>
+    <!----- FOOTER ----->
+    <footer>
+        <h3>Mentions légales</h3>
+        <div class="content">
+            <h4>Sources</h4>
+            <ul>
+                <li>Hibiscus.jpg - @ocean_dreamerr - <a
+                        href="https://www.instagram.com/p/BgcI6QNBIjK/?utm_source=ig_web_copy_linke" target="_blank"
+                        title="Nouvelle fenêtre">Source</a></li>
+                <li>Lakestone_Tome_1.jpg - Éditions BMR - <a
+                        href="https://www.hachette.fr/livre/lakestone-tome-1-9782017207030" target="_blank"
+                        title="Nouvelle fenêtre">Source</a></li>
+                <li>Livaï_Ackerman.jpg - Yoomolee - <a
+                        href="https://www.facebook.com/Yoomolee/posts/pfbid02zf7MLh23EohHCrFVW8zMVhG9TVBztJiJWGKYW4GJnvNzaGuAknNjDXPqQL3VKnJvl"
+                        target="_blank" title="Nouvelle fenêtre">Source</a></li>
+                <li>Pride_and_Prejudice.jpg - Focus Features - <a
+                        href="https://www.focusfeatures.com/pride_and_prejudice" target="_blank"
+                        title="Nouvelle fenêtre">Source</a></li>
+                <li>BTS.jpg - TenAsia - Creative Commons Attribution 3.0 - <a
+                        href="https://commons.wikimedia.org/wiki/File:160507_BTS_at_The_Most_Beautiful_Moment_Epilogue_in_Life_Press_Confrence.png"
+                        target="_blank" title="Nouvelle fenêtre">Source</a></li>
+                <li>Chiffre_4.jpg - Montage personnelle</li>
+                <li>Empathie.jpg - Elodie Duhameau - <a
+                        href="https://www.illustrationquebec.com/fr/portfolios/oeuvres/artiste/ElodieDuhameau/3533/"
+                        target="_blank" title="Nouvelle fenêtre">Source</a></li>
+            </ul>
+            <h4>Conceptrice du site</h4>
+            <p>Assia Ali Abdallah étudiante à l’université Gustave Eiffel (Entrepreneuse Individuelle)</p>
+            <h4>Hébergement</h4>
+            <p> Matthieu Berthet enseignant à l'Université Gustave Eiffel - 2 rue Albert Einstein, 77420
+                Champs-sur-Marne, France (+33 1 60 95 85 85)</p>
+            <h4>Législation relative aux données à caractère personnel</h4>
+            <p>En appuyant sur le bouton d'envoi du formulaire, vous donnez votre consentement pour transférer vos
+                informations vers une base de données. Elles ne seront jamais transmises à des tiers et ne feront jamais
+                l’objet d’une commercialisation.<br>Elles seront conservées sur le serveur de notre université qui
+                réside en France et supprimées durant l’été 2024. Vous détenez les droits d’accès, de rectification,
+                d’effacement et à la limitation sur vos données personnelles.<br>Pour toute revendication veuillez vous
+                adresser au responsable du traitement des données <a
+                    href="mailto:philippe.gambette@univ-eiffel.fr">Philippe Gambette</a>.</p>
+        </div>
+    </footer>
+    <script src="./script/changePortrait.js"></script>
+    <script src="./script/pageTemporaire.js"></script>
+    <script src="./script/mentionsLégales.js"></script>
+    <script src="./script/animationBulles.js"></script>
+</body>
+
+</html>
